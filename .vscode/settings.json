@@ -1,0 +1,9 @@
+{
+  "editor.bracketPairColorization.independentColorPoolPerBracketType": false,
+  "editor.defaultFormatter": null,
+  "editor.fontLigatures": false,
+  "editor.mouseWheelZoom": true,
+  "[vue]": {
+    "editor.defaultFormatter": "Vue.volar"
+  },
+}

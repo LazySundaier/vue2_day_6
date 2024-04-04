@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="box">
+    {{name.toUpperCase()}}
+    {{'hello'+name}}
+    {{age>18?'成年':'未成年'}}
+    <p>
+      {{name+'的爱好是'+info.hobbit}}
+      <br>
+      {{name+'的学校是'+info.school.toUpperCase()}}
+    </p>
+  </div>
+  <script src="../vue.js"></script>
+  <script>
+    const box = new Vue({
+      el: '.box',
+      data: {
+        name: "sunday",
+        age: 20,
+        info: {
+          hobbit: '唱跳rap',
+          school: 'nuist',
+        }
+      }
+    })
+  </script>
+</body>
+
+</html>

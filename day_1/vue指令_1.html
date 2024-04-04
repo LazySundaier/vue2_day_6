@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box1,
+    .box2 {
+      height: 200px;
+      width: 300px;
+      font-size: 25px;
+      margin-bottom: 10px;
+      line-height: 200px;
+      text-align: center;
+      border: black 1px solid;
+      border-radius: 5px;
+      box-shadow: 2px 2px 2px #ddd;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box" v-html="msg"></div>
+  <!-- v-show通过display:none 适合频繁切换显示隐藏的场景-->
+  <div class="box1" v-show="flag">我是v-show控制的盒子</div>
+  <!-- v-if会直接删除DOM中的标签 -->
+  <div class="box2" v-if="flag===false">我是v-if控制的盒子</div>
+  <div id="app">
+    <p v-if="gender === 1">性别：♂ 男</p>
+    <p v-else>性别：♀ 女</p>
+    <hr>
+    <p v-if="score >= 90">成绩评定A：奖励电脑一台</p>
+    <p v-else-if="score >= 70">成绩评定B：奖励周末郊游</p>
+    <p v-else-if="score >= 60">成绩评定C：奖励零食礼包</p>
+    <p v-else>成绩评定D：惩罚一周不能玩手机</p>
+  </div>
+  <script src="../vue.js "></script>
+  <script>
+    const box = new Vue({
+      el: '.box',
+      data: {
+        msg: `
+          <a href="https://www.baidu.com">
+            百度
+          </a>
+           `
+      }
+    })
+    const box1 = new Vue({
+      el: '.box1',
+      data: {
+        flag: false,
+      }
+    })
+    const box2 = new Vue({
+      el: '.box2',
+      data: {
+        flag: false,
+      }
+    })
+    const app=new Vue({
+      el:'#app',
+      data:{
+        gender:1,
+        score:90
+      }
+    })
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box_ {
+      width: 200px;
+      height: 200px;
+      border: 3px solid #000;
+      font-size: 30px;
+      margin-top: 10px;
+    }
+
+    .pink {
+      background-color: pink;
+    }
+
+    .big {
+      width: 300px;
+      height: 300px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    ul {
+      display: flex;
+      border-bottom: 2px solid #e01222;
+      padding: 0 10px;
+    }
+
+    li {
+      width: 100px;
+      height: 50px;
+      line-height: 50px;
+      list-style: none;
+      text-align: center;
+    }
+
+    li a {
+      display: block;
+      text-decoration: none;
+      font-weight: bold;
+      color: #333333;
+    }
+
+    li a.active {
+      background-color: #e01222;
+      color: #fff;
+    }
+
+    .app,
+    #app,
+    .box {
+      margin-bottom: 20px;
+    }
+
+    .box {
+      width: 200px;
+      height: 200px;
+      background-color: pink;
+    }
+
+    .progress {
+      height: 25px;
+      width: 400px;
+      border-radius: 15px;
+      background-color: #272425;
+      border: 3px solid #272425;
+      box-sizing: border-box;
+      margin-bottom: 30px;
+    }
+
+    .inner {
+      width: 50%;
+      height: 20px;
+      border-radius: 10px;
+      text-align: right;
+      position: relative;
+      background-color: #409eff;
+      background-size: 20px 20px;
+      box-sizing: border-box;
+      transition: all 1s;
+    }
+
+    .inner span {
+      position: absolute;
+      right: -20px;
+      bottom: -25px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="app">
+    <div class="box_" :class="{pink:true,big:true}">黑马程序员</div>
+    <div class="box_" :class="['pink','big']">黑马程序员</div>
+  </div>
+  <hr>
+  <div id="app">
+    <ul>
+      <li v-for="(item,index) in list" :key="item.id"><a :class="{active:index===activeIndex}" href="#"
+          @click="activeIndex=index">{{item.name}}</a></li>
+    </ul>
+  </div>
+  <div class="box" :style="{width:'400px',height:'300px',backgroundColor:'green'}"></div>
+
+  <div class="test">
+    <div class="progress">
+      <div class="inner" :style="{width:percent+'%'}">
+        <span>{{percent}}%</span>
+      </div>
+    </div>
+    <button @click="percent=25">设置25%</button>
+    <button @click="percent=50">设置50%</button>
+    <button @click="percent=75">设置75%</button>
+    <button @click="percent=100">设置100%</button>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+  <script>
+    const app = new Vue({
+      el: '#app',
+      data: {
+        activeIndex: 0,//记录谁是高亮
+        list: [
+          { id: 1, name: '京东秒杀' },
+          { id: 2, name: '每日特价' },
+          { id: 3, name: '品类秒杀' }
+        ]
+      }
+    })
+
+    const box = new Vue({
+      el: '.box',
+      data: {
+      }
+    })
+    const test = new Vue({
+      el: '.test',
+      data: {
+        percent: 0,
+      }
+    })
+  </script>
+</body>
+
+</html>
