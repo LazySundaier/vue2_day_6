@@ -9,6 +9,7 @@
 
 <script>
 export default {
+  //组件名最好是多个单词
   name: 'FindMusic'
 }
 </script>
