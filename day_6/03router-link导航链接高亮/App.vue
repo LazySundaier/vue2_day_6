@@ -1,6 +1,7 @@
 <template>
   <div>
     <div class="footer_wrap">
+      <!-- 不用加# -->
       <router-link to="/find">发现音乐</router-link>
       <router-link to="/my">我的音乐</router-link>
       <router-link to="/friend">朋友</router-link>
@@ -21,6 +22,7 @@ body {
   margin: 0;
   padding: 0;
 }
+
 .footer_wrap {
   position: relative;
   left: 0;
@@ -31,6 +33,7 @@ body {
   background-color: #333;
   color: #ccc;
 }
+
 .footer_wrap a {
   flex: 1;
   text-decoration: none;
@@ -40,20 +43,11 @@ body {
   color: #ccc;
   border: 1px solid black;
 }
-/* 
-  router-link-active 模糊匹配(更多)
-  to="/find"  =>  地址栏 /find   /find/one   /find/two  ...
 
-  router-link-exact-active 精确匹配
-  to="/find"  =>  地址栏 /find  
-
-  router-link-active：用于模糊匹配，子路径激活时父路径也会添加样式
-
-  router-link-exact-active：用于精确匹配，只有路径完全一致才会添加样式
-*/
 .footer_wrap a.router-link-active {
-  background-color: purple;
+  background-color: rgb(0, 128, 49);
 }
+
 .footer_wrap a:hover {
   background-color: #555;
 }
