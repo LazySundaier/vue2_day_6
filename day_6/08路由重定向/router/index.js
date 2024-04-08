@@ -1,6 +1,5 @@
 import Home from '@/views/Home'
 import Search from '@/views/Search'
-import NotFound from '@/views/NotFound'
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 Vue.use(VueRouter) // VueRouter插件初始化
@@ -8,12 +7,9 @@ Vue.use(VueRouter) // VueRouter插件初始化
 // 创建了一个路由对象
 const router = new VueRouter({
   routes: [
-    { path: '/', redirect: '/home' },
+    { path: '/', redirect: '/home' },//前一个是匹配的路径,第二个是强制跳转的路劲
     { path: '/home', component: Home },
-    { path: '/search/:words?', component: Search },
-    //要放在最后一个
-    //   *  代表任意路径,前面不匹配就会匹配到最后一个
-    { path: '*', component: NotFound }
+    { path: '/search/:words?', component: Search }
   ]
 })
 
