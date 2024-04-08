@@ -8,8 +8,7 @@ Vue.use(VueRouter) // VueRouter插件初始化
 const router = new VueRouter({
   routes: [
     { path: '/home', component: Home },
-    //words可以匹配到网址中对应的数据
-    { path: '/search/:words', component: Search }
+    { path: '/search', component: Search }
   ]
 })
 
