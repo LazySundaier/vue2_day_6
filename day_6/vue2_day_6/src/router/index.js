@@ -9,7 +9,8 @@ const router = new VueRouter({
   routes: [
     { path: '/home', component: Home },
     //words可以匹配到网址中对应的数据
-    { path: '/search/:words', component: Search }
+    //words后面的?是可选符,即不传参也可以匹配到网页
+    { path: '/search/:words?', component: Search }
   ]
 })
 
