@@ -18,10 +18,9 @@ export default {
     // 在created中，获取路由参数
     // this.$route.query.参数名 获取查询参数
     // this.$route.params.参数名 获取动态路由参数
-    // console.log(this.$route.params.words);
+    console.log(this.$route.params.words);
   }
 }
-
 </script>
 
 <style>
