@@ -46,12 +46,12 @@ body {
 
   router-link-exact-active 精确匹配
   to="/find"  =>  地址栏 /find  
-*/
-/* .footer_wrap a.router-link-active {
-  background-color: purple;
-} */
 
-.footer_wrap a.active {
+  router-link-active：用于模糊匹配，子路径激活时父路径也会添加样式
+
+  router-link-exact-active：用于精确匹配，只有路径完全一致才会添加样式
+*/
+.footer_wrap a.router-link-active {
   background-color: purple;
 }
 .footer_wrap a:hover {
