@@ -3,7 +3,7 @@
     <div class="logo-box"></div>
     <div class="search-box">
       <input type="text">
-      <button @click="goSearch">搜索一下</button>
+      <button>搜索一下</button>
     </div>
     <div class="hot-link">
       热门搜索：
@@ -16,26 +16,7 @@
 
 <script>
 export default {
-  name: 'FindMusic',
-  methods: {
-    goSearch () {
-      // 1. 通过路径的方式跳转
-      // (1) this.$router.push('路由路径') [简写]
-      // this.$router.push('/search')
-
-      // (2) this.$router.push({     [完整写法]
-      //         path: '路由路径' 
-      //     })
-      // this.$router.push({
-      //   path: '/search'
-      // })
-
-      // 2. 通过命名路由的方式跳转 (需要在main.js中给路由起名字) 适合长路径
-      this.$router.push({
-        name: 'search'
-      })
-    }
-  }
+  name: 'FindMusic'
 }
 </script>
 

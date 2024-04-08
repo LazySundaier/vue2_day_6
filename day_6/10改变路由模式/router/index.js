@@ -12,7 +12,6 @@ const router = new VueRouter({
   routes: [
     { path: '/', redirect: '/home' },
     { path: '/home', component: Home },
-    //给路由起名字
     { name: 'search', path: '/search/:words?', component: Search },
     { path: '*', component: NotFound }
   ]
