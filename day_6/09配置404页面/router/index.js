@@ -7,12 +7,12 @@ Vue.use(VueRouter) // VueRouter插件初始化
 
 // 创建了一个路由对象
 const router = new VueRouter({
-  // 注意：一旦采用了 history 模式，地址栏就没有 #，需要后台配置访问规则
-  mode: 'history',
   routes: [
     { path: '/', redirect: '/home' },
     { path: '/home', component: Home },
-    { name: 'search', path: '/search/:words?', component: Search },
+    { path: '/search/:words?', component: Search },
+    //要放在最后一个
+    //   *  代表任意路径,前面不匹配就会匹配到最后一个
     { path: '*', component: NotFound }
   ]
 })
